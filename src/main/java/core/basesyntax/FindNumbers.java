@@ -12,7 +12,12 @@ public class FindNumbers {
      * <p>Пример: если дана строка "data 48 call 9 read13 blank0a", то в массиве должны оказаться
      * числа 96, 18, 26 и 0.</p>
      */
-    public int[] getAllNumbers(String text) {
-        return null;
+    public static int[] getAllNumbers(String text) {
+        String[] array = (text.replaceAll("[^-0-9]+", " ").trim()).split(" ");
+        int[] result = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            result[i] = Integer.parseInt(array[i]) * 2;
+        }
+        return result;
     }
 }
